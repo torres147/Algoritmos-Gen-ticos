@@ -87,7 +87,7 @@ public class AlgGreedyAleatorio_Clase02_Grupo01 {
         for(int i = 0; i < num_datos-k-1; i++){
 
 
-            //Obtenemos el siguiente numero de la semilla y guardamos la ciudad de la posicion correspondiente
+            //Obtenemos el siguiente número de la semilla y guardamos la ciudad de la posición correspondiente
             aleatorio = semilla.nextInt(k);
             ciudad_destino = ciudades.get(aleatorio).getFirst();
             camino_final.add(ciudad_destino);
@@ -118,7 +118,6 @@ public class AlgGreedyAleatorio_Clase02_Grupo01 {
         }
         camino_final.add(ciudades.get(0).getFirst());
 
-        log.registraLog("\nDistancia final en el Greedy: " + distancia_total + "\n");
 
     }
 

@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Random;
 import java.util.Vector;
 
 
@@ -72,9 +73,18 @@ public class GestionaLog {
         this.registraLog("---------------FIN CAMINO---------------" + "\n\n");
     }
 
-    public void cambioEjecucion(int semilla, String archivo){
-        this.registraLog("\n"+"**********************************************************************"+"\n");
+    public void cambioEjecucionGen(int semilla, String archivo, int num_elites, String cruce, int kBest){
+        this.registraLog("\n"+"******************************EVOLUTIVO GENERACIONAL****************************************"+"\n");
         this.registraLog("\n"+"EMPEZAMOS A EJECUTAR EL ARCHIVO " + archivo + " CON LA SEMILLA " + semilla +"\n");
+        this.registraLog("\n"+"PARÁMETROS: NumeroElites = " + num_elites + "   TipoCruce = " + cruce + "   kBest = " + kBest + "\n");
+        this.registraLog("\n---------- Jorge Barbero López ---------- Francisco Torres Peñalver ----------\n");
+        this.registraLog("\n"+"**********************************************************************"+"\n");
+    }
+
+    public void cambioEjecucionEst(int semilla, String archivo, String cruce){
+        this.registraLog("\n"+"****************************EVOLUTIVO ESTACIONARIO******************************************"+"\n");
+        this.registraLog("\n"+"EMPEZAMOS A EJECUTAR EL ARCHIVO " + archivo + " CON LA SEMILLA " + semilla +"\n");
+        this.registraLog("\n"+"PARÁMETROS: TipoCruce = " + cruce + "\n");
         this.registraLog("\n---------- Jorge Barbero López ---------- Francisco Torres Peñalver ----------\n");
         this.registraLog("\n"+"**********************************************************************"+"\n");
     }

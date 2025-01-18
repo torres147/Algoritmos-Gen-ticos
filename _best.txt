@@ -7,20 +7,21 @@ U1060.tsp: 224094
 Fin_Archivos
 Parametros
 K: 5
+Algoritmo: GEN
 PoblacionInicial: 100
 CantidadAleatoriosEnPoblacionInicial: 80
-CantidadElites: 2
+CantidadElites: 1
 ProbabilidadCruceGeneracional: 70
-ProbabilidadCruceEstacionario: 100
 ProbabilidadMutacion: 10
 CondicionParadaIteraciones: 50000
 CondicionParadaTiempo: 60
+TipoCruce: OX2
+ProbSelecOX2: 60
+KBest: 2
 CarpetaLogs: .\logs\
 Semillas
 51214774
 12147745
-21477451
 26536583
-32653658
 Fin_Semillas
 EOF

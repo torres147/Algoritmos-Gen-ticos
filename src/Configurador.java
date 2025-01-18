@@ -8,16 +8,19 @@ import java.util.logging.Logger;
 public class Configurador {
     ArrayList<String> archivo;
     int k;
+    String alg_a_ejecutar;
     ArrayList<Integer> semillas;
     Integer PoblacionInicial;
     Double CantidadAleatoriosEnPoblacionInicial;
     Integer CantidadElites;
     Double ProbabilidadCruceGeneracional;
-    Double ProbabilidadCruceEstacionario;
     Double ProbabilidadMutacion;
     Integer CondicionParadaIteraciones;
     Integer CondicionParadaTiempo;
     String logs;
+    String cruce;
+    Integer probSelecOX2;
+    int kbest;
 
 
     public Configurador(String ruta) {
@@ -83,6 +86,15 @@ public class Configurador {
                         }
 
                         split = linea.trim().split(" ");
+                        alg_a_ejecutar = split[1];
+
+                        try {
+                            linea = b.readLine();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Configurador.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                        split = linea.trim().split(" ");
                         PoblacionInicial = Integer.parseInt(split[1]);
 
                         try {
@@ -113,14 +125,6 @@ public class Configurador {
                         split = linea.trim().split(" ");
                         ProbabilidadCruceGeneracional = Double.parseDouble(split[1]);
 
-                        try {
-                            linea = b.readLine();
-                        } catch (IOException ex) {
-                            Logger.getLogger(Configurador.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-
-                        split = linea.trim().split(" ");
-                        ProbabilidadCruceEstacionario = Double.parseDouble(split[1]);
 
                         try {
                             linea = b.readLine();
@@ -149,6 +153,33 @@ public class Configurador {
 
                         split = linea.trim().split(" ");
                         CondicionParadaTiempo = Integer.parseInt(split[1]);
+
+                        try {
+                            linea = b.readLine();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Configurador.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                        split = linea.trim().split(" ");
+                        cruce = split[1];
+
+                        try {
+                            linea = b.readLine();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Configurador.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                        split = linea.trim().split(" ");
+                        probSelecOX2 = Integer.parseInt(split[1]);
+
+                        try {
+                            linea = b.readLine();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Configurador.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                        split = linea.trim().split(" ");
+                        kbest = Integer.parseInt(split[1]);
 
                         try {
                             linea = b.readLine();
@@ -221,10 +252,6 @@ public class Configurador {
 
     public Double getProbabilidadCruceGeneracional() {
         return ProbabilidadCruceGeneracional;
-    }
-
-    public Double getProbabilidadCruceEstacionario() {
-        return ProbabilidadCruceEstacionario;
     }
 
     public Double getProbabilidadMutacion() {
